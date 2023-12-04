@@ -17,11 +17,11 @@ public:
     void setOperator(char operation);
 
 
-    int addition(int x, int y);
-    int subtraction(int x, int y);
-    int multiplication(int x, int y);
-    double division(int x, int y);
-    int exponentiation(int base, int power);
+    int addition();
+    int subtraction();
+    int multiplication();
+    double division();
+    int exponentiation();
     
     void displayOutput(int x, int y, int outcome, char operation);
 
