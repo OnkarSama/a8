@@ -76,7 +76,7 @@ void SimpleCalculator::setOperator(char operation) {
     this->operation = operation;
 }
 
-int SimpleCalculator::addition(int x, int y) {
+int SimpleCalculator::addition() {
 
     int sum = 0;
 
@@ -85,7 +85,7 @@ int SimpleCalculator::addition(int x, int y) {
     return sum;
 }
 
-int SimpleCalculator::subtraction(int x, int y) {
+int SimpleCalculator::subtraction() {
 
     int difference = 0;
 
@@ -94,7 +94,7 @@ int SimpleCalculator::subtraction(int x, int y) {
     return difference;
 }
 
-int SimpleCalculator::multiplication(int x, int y) {
+int SimpleCalculator::multiplication() {
 
     int product = 0;
 
@@ -103,7 +103,7 @@ int SimpleCalculator::multiplication(int x, int y) {
     return product;
 }
 
-double SimpleCalculator::division(int x, int y) {
+double SimpleCalculator::division() {
 
     double quotient = 0;
 
@@ -112,11 +112,11 @@ double SimpleCalculator::division(int x, int y) {
     return quotient;
 }
 
-int SimpleCalculator::exponentiation(int base, int exponent) {
+int SimpleCalculator::exponentiation() {
 
     int power = 0;
 
-    power = pow((double)base,(double)exponent);
+    power = pow((double)x,(double)y);
 
     return power;
 }
