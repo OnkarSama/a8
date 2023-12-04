@@ -6,7 +6,7 @@ class SimpleCalculator {
 public:
     SimpleCalculator();
 
-    char readUserOperator(string prompt);
+    char readUserOperator();
     int readUserOperands(string prompt);
 
     bool isValidOperator(char operation);
