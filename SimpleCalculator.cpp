@@ -27,7 +27,9 @@ bool SimpleCalculator::isValidOperand(int operand){
     }
 }
 
-char SimpleCalculator::readUserOperator(string prompt) {
+char SimpleCalculator::readUserOperator() {
+
+    string prompt = "Choose from these operations \"+\", \"-\", \"*\", \"/\", \"^\": ";
 
     char userInput = ' ';
     cout << prompt << endl;
