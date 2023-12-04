@@ -11,7 +11,10 @@ int main() {
 
     while(ifContinue == "yes") {
 
-        calculator.readUserOperator();
+        char userOperator = calculator.readUserOperator();
+
+        calculator.setOperator(userOperator);
+
 
     }
 }
