@@ -59,6 +59,21 @@ int SimpleCalculator::readUserOperands(string prompt) {
     return userInput;
 }
 
+void SimpleCalculator::setX(int x) {
+
+    this->x = x;
+}
+
+void SimpleCalculator::setY(int y) {
+
+    this->y = y;
+}
+
+void SimpleCalculator::setOperator(char operation) {
+
+    this->operation = operation;
+}
+
 int SimpleCalculator::addition(int x, int y) {
 
     int sum = 0;
