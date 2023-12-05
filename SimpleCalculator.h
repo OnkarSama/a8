@@ -1,6 +1,9 @@
 #ifndef SIMPLE_CALCULATOR_H
 #define SIMPLE_CALCULATOR_H
 
+#include <string>
+using namespace std;
+
 class SimpleCalculator {
 
 public:
@@ -23,7 +26,7 @@ public:
     double division();
     int exponentiation();
     
-    void displayOutput(int x, int y, int outcome, char operation);
+    void displayOutput(double outcome);
 
 private:
 
