@@ -24,13 +24,13 @@ char SimpleCalculator::readUserOperator() {
     string prompt = "Choose from these operations \"+\", \"-\", \"*\", \"/\", \"^\": ";
 
     char userInput = ' ';
-    cout << prompt;
+    cout << prompt << endl;
     cin >> userInput;
 
     while(!isValidOperator(userInput)) {
 
         cout << "The user input " << userInput << " is invalid." << endl;
-        cout << prompt;
+        cout << prompt <<  endl;
         cin >> userInput;
     }
     return userInput;
@@ -48,14 +48,14 @@ bool SimpleCalculator::isValidOperand(int operand){
 int SimpleCalculator::readUserOperands(string prompt) {
 
     int userInput = 0;
-    cout << prompt;
+    cout << prompt << endl;
     
     cin >> userInput;
 
     while(!isValidOperand(userInput)) {
 
         cout << "The user input " << userInput << " is invalid." << endl;
-        cout << prompt;
+        cout << prompt << endl;
         cin >> userInput;
     }
 
