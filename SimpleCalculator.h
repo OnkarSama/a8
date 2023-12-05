@@ -19,6 +19,7 @@ public:
     void setY(int y);
     void setOperator(char operation);
 
+    double runOperation();
 
     int addition();
     int subtraction();
