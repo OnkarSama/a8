@@ -13,7 +13,9 @@ int main() {
     while(ifContinue == "yes") {
 
         char userOperator = calculator.readUserOperator();
+        cout << endl;
         int x = calculator.readUserOperands("Enter the first number you want the opertion to be completed on: ");
+        cout << endl;
         int y = calculator.readUserOperands("Enter the second number you want to operation to be completed on: ");
 
         calculator.setOperator(userOperator);
@@ -24,7 +26,8 @@ int main() {
 
         calculator.displayOutput(outcome);
 
-        cout << "Do you want to continue? (Enter \"yes\" to continue and anything else to exit.)" << endl;
+        cout << "Do you want to continue? (Enter \"yes\" to continue and anything else to exit.) ";
         cin >> ifContinue;
+        cout << endl;
     }
 }
