@@ -38,7 +38,7 @@ char SimpleCalculator::readUserOperator() {
 
 bool SimpleCalculator::isValidOperand(int operand){
 
-    if(operand >= 0 && operand <=9) {
+    if(operand >= 0 && operand <=9 ) {
         return true;
     } else {
         return false;
@@ -70,6 +70,53 @@ void SimpleCalculator::setX(int x) {
 void SimpleCalculator::setY(int y) {
 
     this->y = y;
+}
+
+double SimpleCalculator::runOperation() {
+
+    double outcome = 0.0;
+
+    char state = this->operation;
+
+    switch (state) {
+
+    case '+':
+
+        outcome = addition();
+
+        break;
+    
+    case '-':
+
+        outcome = subtraction();
+        break;
+
+    case '*':
+
+        outcome = multiplication();
+
+        break;
+    
+    case '/':
+
+        outcome = division();
+
+        break;
+
+    case '^':
+
+        outcome = exponentiation();
+
+        break;
+
+    default:
+
+        return outcome;
+
+        break;
+    }
+
+    return outcome;
 }
 
 void SimpleCalculator::setOperator(char operation) {
@@ -154,7 +201,7 @@ void SimpleCalculator::displayOutput(double outcome){
 
     case '^':
 
-            cout << to_string(this->x) << " to the power of " << to_string(this->y) << " equals " << outcome << endl;
+        cout << to_string(this->x) << " to the power of " << to_string(this->y) << " equals " << outcome << endl;
 
         break;
 
