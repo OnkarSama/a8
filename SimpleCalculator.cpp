@@ -144,20 +144,17 @@ void SimpleCalculator::displayOutput(double outcome){
 
         cout << to_string(this->x) << " times " << to_string(this->y) << " equals " << outcome << endl;
 
-        
         break;
     
     case '/':
 
         cout << to_string(this->x) << " divided by " << to_string(this->y) << " equals " << outcome << endl;
 
-
         break;
 
     case '^':
 
             cout << to_string(this->x) << " to the power of " << to_string(this->y) << " equals " << outcome << endl;
-
 
         break;
 
