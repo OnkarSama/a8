@@ -31,9 +31,9 @@ char SimpleCalculator::readUserOperator() {
     while(!isValidOperator(userInput)) {
 
         cout << "The user input " << userInput << " is invalid." << endl;
+        cout << endl;
         cout << prompt;
         cin >> userInput;
-        cout << endl;
     }
     return userInput;
 }
@@ -58,9 +58,9 @@ int SimpleCalculator::readUserOperands(string prompt) {
     while(!isValidOperand(userInput)) {
 
         cout << "The user input " << userInput << " is invalid." << endl;
+        cout << endl;
         cout << prompt;
         cin >> userInput;
-        cout << endl;
     }
 
     return userInput;
@@ -159,7 +159,12 @@ double SimpleCalculator::division() {
 
     double quotient = 0;
 
-    quotient = (double)x / y;
+    if(this->y == 0){
+        return -1;
+    } else {
+
+        quotient = (double)x / y;
+    }
 
     return quotient;
 }
@@ -202,8 +207,13 @@ void SimpleCalculator::displayOutput(double outcome){
     
     case '/':
 
-        cout << to_string(this->x) << " divided by " << to_string(this->y) << " equals " << outcome << endl;
-        cout << endl;
+        if(outcome == -1) {
+            cout << "Division by zero is not allowed" << endl;
+            cout << endl;
+        } else {
+            cout << to_string(this->x) << " divided by " << to_string(this->y) << " equals " << outcome << endl;
+            cout << endl;
+        }
 
         break;
 
