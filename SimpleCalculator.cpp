@@ -182,30 +182,35 @@ void SimpleCalculator::displayOutput(double outcome){
     case '+':
 
         cout << to_string(this->x) << " plus " << to_string(this->y) << " equals " << outcome << endl;
+        cout << endl;
 
         break;
     
     case '-':
 
         cout << to_string(this->x) << " minus " << to_string(this->y) << " equals " << outcome << endl;
+        cout << endl;
 
         break;
 
     case '*':
 
         cout << to_string(this->x) << " times " << to_string(this->y) << " equals " << outcome << endl;
+        cout << endl;
 
         break;
     
     case '/':
 
         cout << to_string(this->x) << " divided by " << to_string(this->y) << " equals " << outcome << endl;
+        cout << endl;
 
         break;
 
     case '^':
 
         cout << to_string(this->x) << " to the power of " << to_string(this->y) << " equals " << outcome << endl;
+        cout << endl;
 
         break;
 
