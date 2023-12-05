@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <math.h>
+#include <ctype.h>
 
 #include "SimpleCalculator.h"
 
@@ -18,6 +19,23 @@ bool SimpleCalculator::isValidOperator(char oper){
     }
 }
 
+char SimpleCalculator::readUserOperator() {
+
+    string prompt = "Choose from these operations \"+\", \"-\", \"*\", \"/\", \"^\": ";
+
+    char userInput = ' ';
+    cout << prompt;
+    cin >> userInput;
+
+    while(!isValidOperator(userInput)) {
+
+        cout << "The user input " << userInput << " is invalid." << endl;
+        cout << prompt;
+        cin >> userInput;
+    }
+    return userInput;
+}
+
 bool SimpleCalculator::isValidOperand(int operand){
 
     if(operand >= 0 && operand <=9) {
@@ -27,34 +45,17 @@ bool SimpleCalculator::isValidOperand(int operand){
     }
 }
 
-char SimpleCalculator::readUserOperator() {
-
-    string prompt = "Choose from these operations \"+\", \"-\", \"*\", \"/\", \"^\": ";
-
-    char userInput = ' ';
-    cout << prompt << endl;
-    cin >> userInput;
-
-    while(!isValidOperator(userInput)) {
-
-        cout << "The user input " << userInput << " is invalid." << endl;
-        cout << prompt << endl;
-        cin >> userInput;
-    }
-    return userInput;
-}
-
 int SimpleCalculator::readUserOperands(string prompt) {
 
     int userInput = 0;
-    cout << prompt << endl;
+    cout << prompt;
     
     cin >> userInput;
 
     while(!isValidOperand(userInput)) {
 
         cout << "The user input " << userInput << " is invalid." << endl;
-        cout << prompt << endl;
+        cout << prompt;
         cin >> userInput;
     }
 
@@ -119,4 +120,50 @@ int SimpleCalculator::exponentiation() {
     power = pow((double)x,(double)y);
 
     return power;
+}
+
+void SimpleCalculator::displayOutput(double outcome){
+
+    char state = this->operation;
+
+    switch (state) {
+
+    case '+':
+
+        cout << to_string(this->x) << " plus " << to_string(this->y) << " equals " << outcome << endl;
+
+        break;
+    
+    case '-':
+
+        cout << to_string(this->x) << " minus " << to_string(this->y) << " equals " << outcome << endl;
+
+        break;
+
+    case '*':
+
+        cout << to_string(this->x) << " times " << to_string(this->y) << " equals " << outcome << endl;
+
+        
+        break;
+    
+    case '/':
+
+        cout << to_string(this->x) << " divided by " << to_string(this->y) << " equals " << outcome << endl;
+
+
+        break;
+
+    case '^':
+
+            cout << to_string(this->x) << " to the power of " << to_string(this->y) << " equals " << outcome << endl;
+
+
+        break;
+
+    default:
+        break;
+    }
+
+
 }
