@@ -38,14 +38,18 @@ char SimpleCalculator::readUserOperator() {
     return userInput;
 }
 
-bool SimpleCalculator::isValidOperand(string operand){
-
-    if(stoi(operand) >=0 && stoi(operand) <=9) {
-        return true;
-    } else {
-        return false;
+bool SimpleCalculator::isValidOperand(string operand) {
+    
+    try {
+        int value = stoi(operand);
+        return value >= 0 && value <= 9;
+    } catch (const std::invalid_argument& e) {
+        return false;  // Conversion failed
+    } catch (const std::out_of_range& e) {
+        return false;  // Value is out of the range of int
     }
 }
+
 
 int SimpleCalculator::readUserOperands(string prompt) {
 
