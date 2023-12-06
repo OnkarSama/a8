@@ -47,10 +47,6 @@ bool SimpleCalculator::isValidOperand(string operand){
     }
 }
 
-bool SimpleCalculator::hasExtraInput() {
-    return cin.peek() != '\n';  // Check if there is additional input
-}
-
 int SimpleCalculator::readUserOperands(string prompt) {
 
     string userInput;
@@ -60,10 +56,9 @@ int SimpleCalculator::readUserOperands(string prompt) {
     
     cout << endl;
 
-    while(!isValidOperand(userInput) || hasExtraInput()) {
+    while(!isValidOperand(userInput)) {
 
         cout << "The user input " << userInput << " is invalid." << endl;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << endl;
         cout << prompt;
         cin >> userInput;
