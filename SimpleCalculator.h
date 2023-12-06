@@ -14,7 +14,6 @@ public:
 
     bool isValidOperator(char operation);
     bool isValidOperand(string operand);
-    bool hasExtraInput();
 
     void setX(int x);
     void setY(int y);
