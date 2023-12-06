@@ -38,32 +38,38 @@ char SimpleCalculator::readUserOperator() {
     return userInput;
 }
 
-bool SimpleCalculator::isValidOperand(int operand){
+bool SimpleCalculator::isValidOperand(string operand){
 
-    if(operand >= 0 && operand <=9 ) {
+    if(stoi(operand) >=0 && stoi(operand) <=9) {
         return true;
     } else {
         return false;
     }
 }
 
+bool SimpleCalculator::hasExtraInput() {
+    return cin.peek() != '\n';  // Check if there is additional input
+}
+
 int SimpleCalculator::readUserOperands(string prompt) {
 
-    int userInput = 0;
+    string userInput;
     cout << prompt;
     
     cin >> userInput;
+    
     cout << endl;
 
-    while(!isValidOperand(userInput)) {
+    while(!isValidOperand(userInput) || hasExtraInput()) {
 
         cout << "The user input " << userInput << " is invalid." << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << endl;
         cout << prompt;
         cin >> userInput;
     }
 
-    return userInput;
+    return stoi(userInput);
 }
 
 void SimpleCalculator::setX(int x) {
