@@ -1,3 +1,6 @@
 SimpleCalcOut
 TestSimpleCalcOut
 .vscode/
+.idea/
+CMakeLists.txt
+cmake-build-debug/
