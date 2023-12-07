@@ -39,7 +39,7 @@ char SimpleCalculator::readUserOperator() {
 }
 
 bool SimpleCalculator::isValidOperand(string operand) {
-    
+
     try {
         int value = stoi(operand);
         return value >= 0 && value <= 9;
@@ -232,6 +232,5 @@ void SimpleCalculator::displayOutput(double outcome){
     default:
         break;
     }
-
 
 }

@@ -14,7 +14,7 @@ int main() {
 
         char userOperator = calculator.readUserOperator();
         cout << endl;
-        int x = calculator.readUserOperands("Enter the first number you want the opertion to be completed on: ");
+        int x = calculator.readUserOperands("Enter the first number you want the operation to be completed on: ");
         cout << endl;
         int y = calculator.readUserOperands("Enter the second number you want to operation to be completed on: ");
 
