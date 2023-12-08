@@ -19,6 +19,8 @@ public:
     void setY(int y);
     void setOperator(char operation);
 
+    string intToString(int num);
+
     double runOperation();
 
     int addition();
