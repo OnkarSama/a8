@@ -30,7 +30,7 @@ char SimpleCalculator::readUserOperator() {
 
     while(!isValidOperator(userInput)) {
 
-        cout << "The user input " << userInput << " is invalid." << endl;
+        cout << "The user input " << userInput << " is invalid. Enter from one of these \"+\", \"-\", \"*\", \"/\", \"^\" " << endl;
         cout << endl;
         cout << prompt;
         cin >> userInput;
@@ -62,7 +62,7 @@ int SimpleCalculator::readUserOperands(string prompt) {
 
     while(!isValidOperand(userInput)) {
 
-        cout << "The user input " << userInput << " is invalid." << endl;
+        cout << "The user input " << userInput << " is invalid. Enter a digit from 0-9" << endl;        
         cout << endl;
         cout << prompt;
         cin >> userInput;
@@ -183,29 +183,37 @@ int SimpleCalculator::exponentiation() {
     return power;
 }
 
+string SimpleCalculator::intToString(int num) {
+
+    string numsToWords[] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+    return numsToWords[num];
+}
+
 void SimpleCalculator::displayOutput(double outcome){
 
     char state = this->operation;
+
 
     switch (state) {
 
     case '+':
 
-        cout << to_string(this->x) << " plus " << to_string(this->y) << " equals " << outcome << endl;
+        cout << intToString(this->x) << " plus " << intToString(this->y) << " equals " << outcome << endl;
         cout << endl;
 
         break;
     
     case '-':
 
-        cout << to_string(this->x) << " minus " << to_string(this->y) << " equals " << outcome << endl;
+        cout << intToString(this->x) << " minus " << intToString(this->y) << " equals " << outcome << endl;
         cout << endl;
 
         break;
 
     case '*':
 
-        cout << to_string(this->x) << " times " << to_string(this->y) << " equals " << outcome << endl;
+        cout << intToString(this->x) << " times " << intToString(this->y) << " equals " << outcome << endl;
         cout << endl;
 
         break;
@@ -216,7 +224,7 @@ void SimpleCalculator::displayOutput(double outcome){
             cout << "Division by zero is not allowed" << endl;
             cout << endl;
         } else {
-            cout << to_string(this->x) << " divided by " << to_string(this->y) << " equals " << outcome << endl;
+            cout << intToString(this->x) << " divided by " << intToString(this->y) << " equals " << outcome << endl;
             cout << endl;
         }
 
@@ -224,7 +232,7 @@ void SimpleCalculator::displayOutput(double outcome){
 
     case '^':
 
-        cout << to_string(this->x) << " to the power of " << to_string(this->y) << " equals " << outcome << endl;
+        cout << intToString(this->x) << " to the power of " << intToString(this->y) << " equals " << outcome << endl;
         cout << endl;
 
         break;
